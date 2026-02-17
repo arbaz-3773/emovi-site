@@ -1,0 +1,335 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  height: 55px;
+  padding: 0px 20px 0px 20px;
+background-color: red;
+align-items: center;
+z-index: 5;
+
+}
+#Emovi {
+  flex:1;
+}
+body.dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: black;
+background-color: white;
+  transition: 0.3s; 
+}
+footer ,div{
+  text-align: center;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #222;
+  color: white;
+  padding: 10px 20px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+/* Mobile drawer */
+details {
+  color: #fff;
+}
+details a:hover {
+  background: green;
+}
+
+.nav {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #4f4f4f;
+  transition: 0.3s;
+  padding-top: 60px;
+  
+}
+
+.nav.active {
+  left: 0;
+}
+
+.menu-btn {
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Desktop view */
+@media (min-width: 768px) {
+
+  .menu-btn {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    left: 0;        /* IMPORTANT FIX */
+    height: 40px;
+    width: auto;
+   /* background: none;*/
+    display: flex;
+    padding-top: 0;
+  }
+
+  .nav a {
+    padding: 10px 15px;
+  }
+}
+.card {
+  aspect-ratio: 16/9;
+  /* Ya jo bhi aapki width ho */
+  overflow: hidden; /* Yeh bahar ke text ko chhupayega */
+  position: relative;
+}
+
+.track {
+  display: flex; /* Sabhi slides ko ek line mein laane ke liye */
+  flex-wrap: nowrap; /* Slides ko neeche girne se rokne ke liye */
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.new_add {
+  min-width: 100%; /* Har slide card ki poori jagah legi */
+  flex-shrink: 0; /* Slide ko chhota hone se rokne ke liye */
+  text-align: center;
+}
+
+.content{
+  inset: 0;
+  display:flex;
+  margin:12px;
+  position: absolute;
+  background-color: green;
+ /*flex:1;*/
+}
+.info-about {
+  font-size: 20px;
+  margin: 10px;
+  
+}
+#myPopup {
+  display: none;       /* Initially hidden */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  border-radius: 8px;
+  z-index: 10000;
+}
+#overlay {
+  display: none;       /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 500;
+}
+
+
+
+
+.post-card {
+  position: relative;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.post-card img {
+  width: 100%;
+  display: block;
+}
+
+.language-badge {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.post-info {
+  padding: 5px;
+  background-color: #f9f9f9;
+}
+
+.new_add {
+  position: relative;
+  flex-shrink: 0;
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.new_add .title-blur {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  backdrop-filter: blur(5px);
+}
+
+.new_add .language-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 3px 6px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.new_add .date-ago {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 14px;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+
+/* Detailed view container */
+#view-posts {
+  display: none; /* Initially hidden */
+  padding: 15px;
+  background-color: #f9f9f9;
+  max-width: 900px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  font-family: Arial, sans-serif;
+}
+
+#view-posts h2 {
+  margin-top: 0;
+}
+
+#view-posts p {
+  margin: 5px 0;
+}
+
+#view-posts img {
+  max-width: 200px;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+.download-button {
+  display: inline-block;
+  margin: 3px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#searchi {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#more-load {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 80px;
+  height: 30px;
+}
+#more-load-center {
+  text-align: center;
+}
+
+#search-bar,#back-icon,#search-layer {
+  display: none;
+  flex:1;
+}
+
+
+/* Sab text left */
+.view-movie {
+  text-align: left !important;
+}
+
+/* Sab div left */
+.view-movie div,
+.view-movie p,
+.view-movie h2,
+.view-movie h3,
+.view-movie h4 {
+  text-align: left !important;
+}
+
+/* Thumbnail left hi rahe */
+.view-movie > img {
+  display: block;
+  margin: 10px 0 !important;
+}
+
+/* Sirf screenshot wala section center */
+.view-movie div[style*="overflow-x"] {
+  text-align: center !important;
+}
+
+/* Screenshot images full width */
+.view-movie div[style*="overflow-x"] img {
+  width: 100% !important;
+  margin: 5px 0 !important;
+}
+
+/* Download button normal button jaisa */
+.download-button {
+  display: inline-block;
+  text-align: center !important;
+}
